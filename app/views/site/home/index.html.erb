@@ -1,0 +1,20 @@
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Consulta Fácil</h1>
+                <p class="lead">Nunca foi tão fácil cuidar da sua saúde.</p>
+                <ul class="list-unstyled">   
+                <%= form_tag(site_home_index_path, :metod => :get) do %>
+                <%= text_field_tag 'search', nil, placeholder: 'Digite o termo a ser pesquisado' %>
+                <% end %>             
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+
+    </div>
+    <!-- /.container -->
+
