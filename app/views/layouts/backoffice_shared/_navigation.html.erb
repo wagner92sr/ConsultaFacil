@@ -58,11 +58,13 @@
                         </li>
                         <li>
                            <%= link_to backoffice_admins_path do %>
-                         <i class="fa fa-user fa-fw"></i>Pacientes
+                              <i class="fa fa-user fa-fw"></i>Pacientes
                            <% end %>
                         </li>
                         <li>
-                           <i class="fa fa-medkit fa-fw"></i>Doenças CID
+                          <%= link_to backoffice_cids_index_path do %>
+                              <i class="fa fa-medkit fa-fw"></i>Doenças CID
+                           <% end %> 
                         </li>
                         
                     </ul>

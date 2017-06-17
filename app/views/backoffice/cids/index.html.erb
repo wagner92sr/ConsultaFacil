@@ -1,0 +1,35 @@
+
+<h1 class="page-header">Cadastro Internacional de Doenças</h1>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Cids cadastrados no sistema 
+     
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>                                            
+                    <tr>
+                        <th>Id</th>
+                        <th>CID</th>
+                        <th>Nome</th>
+                    </tr>                                            
+                </thead>
+                <tbody>
+                    <% @cids.each do |cid| %>
+                    <tr>
+                        <td><%= cid.id %></td>                                                
+                        <td><%= cid.cid %></td>                                                
+                        <td><%= cid.name %></td>   
+                      
+                    </tr>
+                    <% end %>                                           
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.panel-body -->
+</div>

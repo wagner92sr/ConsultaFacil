@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :backoffice do
+    get 'cids/index'
+  end
+
   get 'backoffice', to: 'backoffice/dashboard#index'
 
   namespace :backoffice do
