@@ -25,6 +25,8 @@
            <%= f.text_field :name, class:"form-control", placeholder:"Joãozinho da Silva" %>
            <label>E-mail</label>
            <%= f.text_field :email, class:"form-control", placeholder:"admin1@admin.com" %>
+           <label>Papel</label>
+           <%= f.collection_radio_buttons :role, Author.all, :id, :name_with_initial %>
            <label>Senha</label>
            <%= f.password_field :password, class:"form-control", placeholder:"teste123" %>
            <label>Confirmação de senha</label>

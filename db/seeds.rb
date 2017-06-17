@@ -17,3 +17,12 @@ Admin.create!(name: "Administrador Geral",
               role: 0 
               )
 puts "Administrador cadastrado com sucesso"
+
+puts "Cadastrando o administrador padrão"
+Admin.create!(name: "Administrador basico",
+	          email: "adminbasico@admin.com",
+              password: "123456",
+              password_confirmation: "123456",
+              role: 1
+              )
+puts "Administrador básico cadastrado com sucesso"

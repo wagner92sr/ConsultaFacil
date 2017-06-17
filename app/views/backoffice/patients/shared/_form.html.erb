@@ -1,0 +1,48 @@
+
+<h1 class="page-header">Pacientes</h1>
+
+<% if @patient.errors.any? %>
+<div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <ul>
+        <% @patient.errors.full_message.each do |message|%>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <%= action %>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+     <div class="col-lg-6">
+        <%= form_for([:backoffice, @patient]) do |f| %>
+        <div class="form-group">
+           <label>Nome</label>
+           <%= f.text_field :name, class:"form-control", placeholder:"Joãozinho da Silva" %>
+           <label>Endereço</label>
+           <%= f.text_field :address, class:"form-control", placeholder:"Avenida inventada, 123" %>
+           <label>Cidade</label>
+           <%= f.text_field :city, class:"form-control", placeholder:"Porto Alegre" %>
+           <label>Telefone</label>
+           <%= f.text_field :phone, class:"form-control", placeholder:"3333-3333" %>
+           <label>CPF</label>
+           <%= f.text_field :cpf, class:"form-control", placeholder:"999.999.999-99" %>
+           <label>Observações</label>
+           <%= f.text :observations, class:"form-control", placeholder:"Intolerância à lactose" %>
+           <label>Nome da mãe</label>
+           <%= f.text_field :mother, class:"form-control", placeholder:"Mariazainha da Silva" %>
+       </div>
+       <button type="submit" class="btn btn-default">Salvar</button>
+       <% end %>
+   </div>
+
+   <!-- /.table-responsive -->
+</div>
+<!-- /.panel-body -->
+</div>
+
+      

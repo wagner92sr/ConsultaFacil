@@ -1,0 +1,48 @@
+
+<h1 class="page-header">Médicos</h1>
+
+<% if @doctor.errors.any? %>
+<div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <ul>
+        <% @doctor.errors.full_message.each do |message|%>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <%= action %>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+     <div class="col-lg-6">
+        <%= form_for([:backoffice, @doctor]) do |f| %>
+        <div class="form-group">
+           <label>Nome</label>
+           <%= f.text_field :name, class:"form-control", placeholder:"Joãozinho da Silva" %>
+           <label>Endereço</label>
+           <%= f.text_field :address, class:"form-control", placeholder:"Avenida inventada, 123" %>
+           <label>Cidade</label>
+           <%= f.text_field :city, class:"form-control", placeholder:"Porto Alegre" %>
+           <label>Telefone</label>
+           <%= f.text_field :phone, class:"form-control", placeholder:"3333-3333" %>
+           <label>Hospital</label>
+           <%= f.text_field :hospital_id, class:"form-control", placeholder:"Hospital inventado" %>
+           <label>CRM</label>
+           <%= f.text_field :crm, class:"form-control", placeholder:"4444449994444" %>
+           <label>Especialidade</label>
+           <%= f.text_field :skill, class:"form-control", placeholder:"FALTA IMPLEMENTAR O CADASTRO DE ESPECIALIDADES" %>
+       </div>
+       <button type="submit" class="btn btn-default">Salvar</button>
+       <% end %>
+   </div>
+
+   <!-- /.table-responsive -->
+</div>
+<!-- /.panel-body -->
+</div>
+
+      

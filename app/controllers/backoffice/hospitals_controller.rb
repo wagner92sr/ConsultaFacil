@@ -10,8 +10,8 @@ class Backoffice::HospitalsController < BackofficeController
   end
 
   def create
-     @hospital = Hospital.new(params_hospital)
-     if @hospital.save
+     @hospital = HospitalService.create(params_hospital)
+     unless  @hospital.errors.any?
         redirect_to backoffice_hospitals_path, notice: "O hospital (#{@hospital.name}) foi cadastrado com sucesso."
      else
         render :new

@@ -2,11 +2,13 @@ class Backoffice::AdminsController < BackofficeController
  before_action :set_admin, only: [:edit, :update, :destroy]
 
   def index
-  	 @admins = Admin.all #faz um select na tabela admin
+  	# @admins = Admin.all #faz um select na tabela admin
+    @admins = policy_scope(Admin)#vou utilizar o pundit e dependendo do usuario eu exibo todo mundo ou somente os restritos
   end
 
   def new #metodo para adicionar um novo admin
      @admin = Admin.new
+     authorize @admin#pundit, procura metodo new na policy
   end
 
   def create

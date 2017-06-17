@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   namespace :backoffice do
     resources :hospitals, except: [:show, :destroy] 
     resources :admins, except: [:show]
+    resources :doctors, except: [:show]
+    resources :patients, except: [:show]
     get 'dashboard', to: 'dashboard#index' 
+    #get 'patients/index' get 'doctors/index'
   end
 
   namespace :site do

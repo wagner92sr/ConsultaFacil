@@ -2,7 +2,7 @@ class Backoffice::HospitalsController::HospitalService #POROS - Classes para tir
 	attr_accessor :hospital
 
 	def self.create(params_hospital)
-		@hospital = Admin.new(params_hospital)
+		@hospital = Hospital.new(params_hospital)
 
 		if @hospital.valid?
 			@hospital.save!
