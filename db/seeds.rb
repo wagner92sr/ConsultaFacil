@@ -26,3 +26,34 @@ Admin.create!(name: "Administrador basico",
               role: 1
               )
 puts "Administrador básico cadastrado com sucesso"
+
+puts "Cadastrando CIDS"
+cids = [  "A04.0",
+          "A04.1",
+          "A04.2",
+          "A04.3",
+          "A04.4",
+          "A04.5",
+          "A04.6",
+          "A04.7",
+          "A04.8",
+          "A04.9" ]  
+cids.each do |cid|
+  Cid.create!(cid: cid)
+end
+                
+namesCid = [ "Infecção por Escherichia coli enteropatogênica",
+             "Infecção por Escherichia coli enterotoxigênica",
+             "Infecção por Escherichia coli enteroinvasiva",
+             "Infecção por Escherichia coli enterohemorrágica",
+             "Outras infecções intestinais por Escherichia",
+             "Enterite por Campylobacter",
+             "Enterite devida a Yersinia enterocolitica",
+             "Enterocolite devida a Clostridium difficileColite pseudomembranosaIntoxicação alimentar por Clostridium difficile",
+             "Outras infecções bacterianas intestinais especificadas",
+             "Infecção intestinal bacteriana não especificada" ]
+                      
+namesCid.each do |name|
+  Cid.create!(name: name)
+end
+puts "CIDS criados com sucesso "

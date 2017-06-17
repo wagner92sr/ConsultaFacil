@@ -14,4 +14,3 @@
 //= require_tree .
 //= require jquery
 //= require bootbox.js
-
