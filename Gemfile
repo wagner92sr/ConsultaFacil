@@ -70,6 +70,8 @@ group :development, :test do
   gem 'rails-erd'  
   #Faker - criar contas fakes de forma automatica
 	gem "faker"
+  #
+  gem 'mailcatcher'
 end
 
 group :development do
