@@ -12,8 +12,10 @@ source 'https://rails-assets.org' do
 	gem 'rails-assets-bootstrap', '3.3.7'
 	#
 	gem 'rails-assets-bootbox'
-  gem 'rails-assets-bootbox.js'
+  #gem 'rails-assets-bootbox.js'
 end
+#jquery-rails
+gem 'jquery-rails'
 #helper para enum
 gem "enum_help"
 #Pundit

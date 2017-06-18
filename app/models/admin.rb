@@ -1,8 +1,8 @@
 class Admin < ApplicationRecord
   #constantes
-  ROLES = {:full_access => 0, :restricted_access => 1}
-
-	enum role: ROLES
+  #ROLES = {:full_access => 0, :restricted_access => 1}
+  enum role: [:full_access, :restricted_access]
+	#enum role: ROLES
 
   enum skill:[:cardiologista,:ginecologista,:clinico_geral]
   
@@ -16,13 +16,15 @@ class Admin < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+=begin
   def role_br
-  	if self.role == full_access?
-  		'Acesso Completo'
-  	else
-  		'Acesso Restrito'
-  	end
+    if self.role == 'full_access'
+        'Acesso Completo'
+    else
+        'Acesso restrito'
+    end
   end
+
+=end
 
 end

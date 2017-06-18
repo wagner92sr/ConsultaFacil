@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :backoffice do
+    get 'patients/index'
+  end
+
+  namespace :backoffice do
     get 'cids/index'
   end
 

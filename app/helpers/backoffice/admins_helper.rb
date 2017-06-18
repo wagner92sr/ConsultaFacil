@@ -3,7 +3,7 @@ module Backoffice::AdminsHelper
   OptionsForRoles = Struct.new(:id, :description)
 
   def options_for_roles
-    Admin.roles.map do |key, value| #roles_i18n.map
+    Admin.roles_i18n.map do |key, value| #roles_i18n.map
       OptionsForRoles.new(key, value)
     end
   end
