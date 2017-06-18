@@ -1,8 +1,8 @@
 class Admin < ApplicationRecord
   #constantes
-  #ROLES = {:full_access => 0, :restricted_access => 1}
-  enum role: [:full_access, :restricted_access]
-	#enum role: ROLES
+  ROLES = {:full_access => 0, :restricted_access => 1}
+  #enum role: [:full_access, :restricted_access]
+	enum role: ROLES
 
   enum skill:[:cardiologista,:ginecologista,:clinico_geral]
   
