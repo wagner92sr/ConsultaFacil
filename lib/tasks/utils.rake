@@ -16,3 +16,5 @@ namespace :utils do
   end
 
 end
+#rake -T visualiza os rakes disponiveis
+# rake utils:generate_admins

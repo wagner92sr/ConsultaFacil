@@ -18,7 +18,7 @@ Admin.create!(name: "Administrador Geral",
               )
 puts "Administrador cadastrado com sucesso"
 
-puts "Cadastrando o administrador padrão"
+puts "Cadastrando o administrador básico"
 Admin.create!(name: "Administrador basico",
 	          email: "adminbasico@admin.com",
               password: "123456",
@@ -26,6 +26,13 @@ Admin.create!(name: "Administrador basico",
               role: 1
               )
 puts "Administrador básico cadastrado com sucesso"
+
+puts "Cadastrando o paciente"
+Paciente.create!(email: "paciente@paciente.com",
+                  password: "123456",
+                  password_confirmation: "123456"
+                  )
+puts "Paciente padão cadastrado com sucesso"
 
 puts "Cadastrando CIDS"
 cids = [  "A04.0",
