@@ -1,5 +1,7 @@
 class Backoffice::AdminsController < BackofficeController
  before_action :set_admin, only: [:edit, :update, :destroy]
+ after_action :verify_authorized, only: [:new, :destroy]
+ after_action :verify_policy_scoped, only: :index
 
   def index
   	# @admins = Admin.all #faz um select na tabela admin
@@ -14,7 +16,7 @@ class Backoffice::AdminsController < BackofficeController
   def create
      @admin = Admin.new(params_admin)
      if @admin.save
-        redirect_to backoffice_admins_path, notice: "O administrador (#{@admin.email}) foi cadastrado com sucesso."
+        redirect_to backoffice_admins_path, notice: "O administrador (#{@admin.name}) foi cadastrado com sucesso."
      else
         render :new
      end  
@@ -35,17 +37,18 @@ class Backoffice::AdminsController < BackofficeController
      end
 
      if @admin.update(params_admin)
-        redirect_to backoffice_admins_path, notice: "O administrador (#{@admin.email}) foi atualizado com sucesso."
+        redirect_to backoffice_admins_path, notice: "O administrador (#{@admin.name}) foi atualizado com sucesso."
      else
         render :edit
      end  
   end
 
   def destroy
-    email_excluido = @admin.email
+    authorize @admin
+    name_excluido = @admin.name
 
     if @admin.destroy
-       redirect_to backoffice_admins_path, notice: "O administrador (#{email_excluido}) foi excluído com sucesso."
+       redirect_to backoffice_admins_path, notice: "O administrador (#{name_excluido}) foi excluído com sucesso."
     else
        render :index
     end  
@@ -58,7 +61,7 @@ class Backoffice::AdminsController < BackofficeController
   end   
   #eu poderia passar isto no create, mas como ficaria muito grande, criei o metodo params_admin para poder reutilizar.
   def params_admin
-      params.require(:admin).permit(:name, :email, :password, :password_confirmation)
+      params.require(:admin).permit(policy(@admin).permitted_attributes)
   end
 
 end
