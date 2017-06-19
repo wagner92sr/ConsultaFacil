@@ -1,0 +1,24 @@
+<table class="table table-hover"> 
+    <thead> 
+       <tr> 
+          <th>#</th>
+          <th>Id</th> 
+          <th>Data</th> 
+          <th>Médico</th>
+          <th>Hospital</th>
+          <th>Status</th>
+        </tr> 
+    </thead>
+     <tbody>
+        <tr> 
+        <% @appointments.each do |app| %>
+           <td><%= app.id %></td>                        
+           <td><%= app.date %></td> 
+           <td><%= app.doctor.name %></td>
+           <td><%= app.hospital.name %></td>
+           <td><%= app.status %></td>             
+        <% end %>
+        </tr>       
+      </tbody> 
+</table>
+

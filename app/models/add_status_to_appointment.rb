@@ -1,0 +1,2 @@
+class AddStatusToAppointment < ApplicationRecord
+end
