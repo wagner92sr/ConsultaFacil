@@ -9,10 +9,10 @@ class Backoffice::DoctorsController < BackofficeController
      @doctor = Doctor.new
   end
 
-  def create
-     @doctor = DoctorService.create(params_doctor)
-     unless  @doctor.errors.any?
-        redirect_to backoffice_doctors_path, notice: "O Médico (#{@doctor.name}) foi cadastrado com sucesso."
+   def create
+     @doctor = Doctor.new(params_doctor)
+     if @doctor.save
+        redirect_to backoffice_doctors_path, notice: "O médico (#{@doctor.name}) foi cadastrado com sucesso."
      else
         render :new
      end  

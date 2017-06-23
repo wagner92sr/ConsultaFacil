@@ -22,7 +22,7 @@
        <%= form_for([:backoffice, @doctor]) do |f| %>
           <div class="form-group">        
              <label>Nome</label>
-             <%= f.text_field :name, class:"form-control", placeholder:"Joãozinho da Silva" %>
+             <%= f.text_field :name, class:"form-control", placeholder:"Dr. Joãozinho da Silva" %>
           </div>
 
           <div class="form-group">
@@ -42,7 +42,7 @@
 
           <div class="form-group">
              <label>Hospital</label>
-             <%= f.text_field :hospital_id, class:"form-control", placeholder:"Hospital inventado" %>
+             <%= f.collection_select :hospital_id, Hospital.all, :id, :name, :selected => @doctor.hospital_id, class:"form-control"  %>
           </div>
 
           <div class="form-group">    
