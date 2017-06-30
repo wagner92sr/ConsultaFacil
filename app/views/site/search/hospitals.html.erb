@@ -1,0 +1,36 @@
+
+<h1 class="page-header">Hospitais</h1>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+       
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>                                            
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                        <th>Telefone</th>
+                        <th></th>
+                    </tr>                                            
+                </thead>
+                <tbody>
+                <% unless @hospitals.blank? > 1%>
+                    <% @hospitals.each do |hospital| %>
+                    <tr>                                          
+                        <td><%= hospital.name %></td>
+                    </tr>
+                    <% end %>   
+                <% end %>                                        
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.panel-body -->
+</div>

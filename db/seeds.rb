@@ -64,3 +64,13 @@ namesCid.each do |name|
   Cid.create!(name: name)
 end
 puts "CIDS criados com sucesso "
+=begin
+puts "Cadastrando uma consulta fake"
+Appointment.create!(date: "24/06/2017",
+                    observations: "Consulta TESTE",
+                    status: 1,
+                    hospital: 1,
+                    doctor: 1,
+                    paciente: 1) 
+=end
+        

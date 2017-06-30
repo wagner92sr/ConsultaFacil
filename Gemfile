@@ -14,6 +14,15 @@ source 'https://rails-assets.org' do
 	gem 'rails-assets-bootbox'
   #gem 'rails-assets-bootbox.js'
 end
+#UPLOAD DE IMAGENS
+gem 'paperclip', '~> 5.0.0'
+
+#Calendario e talvez outras coisas de jquery
+gem 'jquery-ui-rails'
+#pesquisas
+gem 'ransack', github: 'activerecord-hackery/ransack'
+#Twitter
+gem 'twitter'
 #jquery-rails
 gem 'jquery-rails'
 #helper para enum

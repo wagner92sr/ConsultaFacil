@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170618181904) do
+ActiveRecord::Schema.define(version: 20170630015114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,10 @@ ActiveRecord::Schema.define(version: 20170618181904) do
     t.bigint "hospital_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture_file_name"
+    t.string "picture_content_type"
+    t.integer "picture_file_size"
+    t.datetime "picture_updated_at"
     t.index ["hospital_id"], name: "index_doctors_on_hospital_id"
   end
 
@@ -76,6 +80,10 @@ ActiveRecord::Schema.define(version: 20170618181904) do
     t.string "phone", limit: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture_file_name"
+    t.string "picture_content_type"
+    t.integer "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "pacientes", force: :cascade do |t|

@@ -1,6 +1,8 @@
 class Site::Profile::AppointmentController < Site::ProfileController
+  before_action :set_appointment, only: [:edit, :update]
+
 	def index
-  	 @appointments = Appointment.all #faz um select na tabela appointmentwhere(paciente_id: current_paciente)
+  	 @appointments = Appointment.where(paciente_id: current_paciente.id) #faz um select na tabela appointmentwhere(paciente_id: current_paciente)
   end
 
   def new #metodo para adicionar um novo paciente
@@ -8,25 +10,37 @@ class Site::Profile::AppointmentController < Site::ProfileController
   end
 
   def create
-     @appointment = AppointmentService.create(params_appointment)
-     unless  @appointment.errors.any?
-        redirect_to backoffice_appointments_path, notice: "A consulta foi cadastrada com sucesso para a data (#{@appointment.date})."
-     else
-        render :new
-     end  
+    @appointment = Appointment.new(params_appointment)
+    @appointment.paciente = current_paciente
+
+    if @appointment.save
+      redirect_to site_profile_appointment_index_path, notice: "Consulta atualizada com sucesso"
+    else
+      render :new
+    end
+    
   end
 
   def edit #metodo para editar um paciente
-     #set_appointment vou passar a chamar pelo before_action
+     
   end
 
   def update
-     #set_appointment vou passar a chamar pelo before_action
-     if @appointment.update(params_appointment)
-        redirect_to backoffice_appointments_path, notice: "A consulta (#{@appointment.name}) foi atualizado com sucesso."
-     else
-        render :edit
-     end  
+  # "appointment"=>{"date"=>"2017-06-24", "hospital_id"=>"4", "doctor_id"=>"3", "paciente_id"=>"1", "observations"=>"Teste hhhh"}, "commit"=>"Atualizar", "id"=>"1"}
+    if @appointment.update(params_appointment)
+      redirect_to site_profile_appointment_index_path, notice: "Consulta atualizada com sucesso"
+    else
+      render :edit
+    end
+  end
+
+  private
+  def set_appointment
+    @appointment = Appointment.find(params[:id])
+  end
+
+  def params_appointment
+    params.require(:appointment).permit(:id, :date, :hospital_id, :doctor_id, :paciente_id, :observations)
   end
 
 end

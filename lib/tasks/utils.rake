@@ -1,6 +1,6 @@
-namespace :utils do
-  desc "Criar administradores fakes"
-  task generate_admins: :environment do
+namespace :dev do
+  desc "Setup developmet"
+  task setup: :environment do
   	puts "Cadastrando administradores fakes.."
 
   	15.times do

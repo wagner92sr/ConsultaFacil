@@ -21,11 +21,13 @@ Rails.application.routes.draw do
 
   namespace :site do
     get 'home/index'
+    get 'search', to: 'search#hospitals'
 
     namespace :profile do
       resources :dashboard, only: [:index]
-      resources :appointment, except: [:show, :destroy]
+      resources :appointment, except: [:show]#only: [:index, :edit, :update, :new, :create]
     end
+      resources :appointment_details, only: [:show]
   end
 
   devise_for :admins, :skip =>[:registrations]

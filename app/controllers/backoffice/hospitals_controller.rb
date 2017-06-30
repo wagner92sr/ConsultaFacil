@@ -38,7 +38,7 @@ class Backoffice::HospitalsController < BackofficeController
   end   
   #eu poderia passar isto no create, mas como ficaria muito grande, criei o metodo params_hospital para poder reutilizar.
   def params_hospital
-      params.require(:hospital).permit(:name, :address, :city, :phone)
+      params.require(:hospital).permit(:name, :address, :city, :phone, :picture)
   end
 
 end

@@ -1,6 +1,4 @@
 //= require bootstrap_sb_admin_base_v2
-//= require notifyjs
-//= require bootbox.js
 
 //Sobrescreve o data:confirm do Rails para mudar as modais de confirmação dentro do backoffice
 $.rails.allowAction = function(element) {

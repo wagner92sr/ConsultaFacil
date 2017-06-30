@@ -18,17 +18,11 @@
                         <a href="#">Hospitais</a>
                     </li>
                     <li>
-                        <a href="#">Clínicas</a>
-                    </li>
-                    <li>
                         <a href="#">Médicos</a>
                     </li>
                     <li>
                         <a href="#">Especialidades</a>
-                    </li>
-                    <li>
-                        <%= link_to 'Meu Perfil', site_profile_dashboard_index_path %>
-                    </li>
+                    </li>                   
                     <li>
                         <a href="#">Notícias</a>
                     </li>
@@ -40,6 +34,9 @@
                             <%= link_to "Login", new_paciente_session_path %>
                         </li>
                     <% else %>
+                        <li>
+                            <%= link_to 'Meu Perfil', site_profile_dashboard_index_path %>
+                        </li>
                         <li>
                             <%= link_to current_paciente.email, "#" %>
                         </li>

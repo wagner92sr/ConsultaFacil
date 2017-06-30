@@ -23,7 +23,12 @@ class Backoffice::DoctorsController < BackofficeController
   end
 
   def update
-    
+     #set_hospital vou passar a chamar pelo before_action
+     if @doctor.update(params_doctor)
+        redirect_to backoffice_doctors_path, notice: "O hospital (#{@doctor.name}) foi atualizado com sucesso."
+     else
+        render :edit
+     end  
   end
   
   private
@@ -33,7 +38,7 @@ class Backoffice::DoctorsController < BackofficeController
   end   
   #eu poderia passar isto no create, mas como ficaria muito grande, criei o metodo params_doctor para poder reutilizar.
   def params_doctor
-      params.require(:doctor).permit(:name, :address, :city, :phone, :crm)
+      params.require(:doctor).permit(:name, :address, :city, :phone, :crm, :picture)
   end
 
 end

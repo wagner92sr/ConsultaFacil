@@ -13,4 +13,6 @@
 //= require_tree .
 //= require jquery
 //= require rails-ujs
+//= require notifyjs
+//= require bootbox.js
 

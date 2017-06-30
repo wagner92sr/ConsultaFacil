@@ -50,6 +50,18 @@
              <%= f.text_field :crm, class:"form-control", placeholder:"4444449994444" %>
           </div>
 
+          <div class="form-group"> 
+            <label>Foto</label> <br>
+            <%= image_tag @doctor.picture.url(:medium), class:"img-thumbnail" %>
+            <label></label>
+          </div>
+          
+          <div class="form-group">         
+            <%= f.file_field :picture %>
+          </div> 
+
+
+
          <div class="form-group">
             <button type="submit" class="btn btn-default">Salvar</button>
          </div>
