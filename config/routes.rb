@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :admins, except: [:show]
     resources :doctors, except: [:show]
     resources :patients, except: [:show]
+    resources :diagrams, only: [:index]
     get 'dashboard', to: 'dashboard#index' 
     #get 'patients/index' get 'doctors/index'
   end
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
     namespace :profile do
       resources :dashboard, only: [:index]
       resources :appointment, except: [:show]#only: [:index, :edit, :update, :new, :create]
+      resources :my_data, only: [:edit, :update]
     end
       resources :appointment_details, only: [:show]
   end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  second_name: MyString
+  birthdate: 2017-07-01
+  mother_name: MyString
+
+two:
+  first_name: MyString
+  second_name: MyString
+  birthdate: 2017-07-01
+  mother_name: MyString

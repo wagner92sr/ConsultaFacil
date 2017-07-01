@@ -14,6 +14,14 @@ source 'https://rails-assets.org' do
 	gem 'rails-assets-bootbox'
   #gem 'rails-assets-bootbox.js'
 end
+
+#DATEPICKER
+gem 'jquery-datetimepicker-rails'
+#Paginador
+gem 'kaminari'
+#traducao kaminari
+gem 'kaminari-i18n'
+
 #UPLOAD DE IMAGENS
 gem 'paperclip', '~> 5.0.0'
 

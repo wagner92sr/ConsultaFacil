@@ -39,11 +39,15 @@
                     </a>
                 </li>
                 <li>
-                    <%= link_to "Minhas consultas",site_profile_appointment_index_path %>
+                    <%= link_to "Minhas consultas", site_profile_appointment_index_path %>
                 </li>
                 <li>
-                    <%= link_to "Agendar consulta",new_site_profile_appointment_path %>
-                </li>                
+                    <%= link_to "Agendar consulta", new_site_profile_appointment_path %>
+                </li>
+                <li>
+                    <%= link_to "Meus dados", edit_site_profile_my_datum_path(current_paciente) %>
+                </li>       
+
                 <li>
                     <a href="#">Contact</a>
                 </li>

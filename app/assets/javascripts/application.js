@@ -15,4 +15,5 @@
 //= require rails-ujs
 //= require notifyjs
 //= require bootbox.js
+//= require jquery.datetimepicker
 

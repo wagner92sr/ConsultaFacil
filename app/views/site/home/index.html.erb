@@ -2,17 +2,15 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-6 text-center">
+            <div class="col-lg-8 text-center">
                 <h1>Consulta Fácil</h1>
-                <p class="lead">Nunca foi tão fácil cuidar da sua saúde.</p>
-                <ul class="list-unstyled">   
+                
                     <%= form_tag site_search_path, method: :get do %>
-                    <%= text_field_tag(:q, params[:q],{ class:"form-control", placeholder: "Pesquisar por..."}) %>
-                                 
+                    <%= text_field_tag(:q, params[:q],{ class:"form-control", placeholder: "Pesquisar por..."}) %>        
                     <span class="input-group-btn">
                     <%= submit_tag("Pesquisar", class:"btn btn-default") %>
                     <% end %>
-                </ul>
+             
             </div>
         </div>
         <!-- /.row -->        

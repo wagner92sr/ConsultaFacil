@@ -36,7 +36,7 @@ class Site::Profile::AppointmentController < Site::ProfileController
 
   private
   def set_appointment
-    @appointment = Appointment.find(params[:id])
+    @appointment = Appointment.find_or_create_by(paciente_id: current_paciente.id)
   end
 
   def params_appointment

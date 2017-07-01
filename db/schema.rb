@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170630015114) do
+ActiveRecord::Schema.define(version: 20170701150854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,5 +113,17 @@ ActiveRecord::Schema.define(version: 20170630015114) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profile_members", force: :cascade do |t|
+    t.string "first_name"
+    t.string "second_name"
+    t.date "birthdate"
+    t.string "mother_name"
+    t.bigint "paciente_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["paciente_id"], name: "index_profile_members_on_paciente_id"
+  end
+
   add_foreign_key "doctors", "hospitals"
+  add_foreign_key "profile_members", "pacientes"
 end

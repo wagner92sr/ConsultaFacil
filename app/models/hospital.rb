@@ -8,5 +8,5 @@ class Hospital < ApplicationRecord
 
 	#scopes
 	#scope :search, ->(q) { where("name LIKE ?", "%#{q}%") }
-	scope :search_hospital, ->(q) { where("name LIKE ?", "%#{q}%")}
+	scope :search_hospital, ->(q, page) { where("lower(name) LIKE ?", "%#{q.downcase}%").page(page).per(4)}
 end
