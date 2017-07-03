@@ -46,6 +46,15 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <%= f.label :mother_name %>
+        <%= f.text_field :mother_name, class: "form-control", placeholder: "Nome da mãe" %>
+      </div>
+    </div>
+  </div>
+
   <%= submit_tag "#{t('buttons.send')}", class: "btn btn-default"  %>
 <% end %>
 

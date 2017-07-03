@@ -1,0 +1,37 @@
+
+<h1 class="page-header">Prontuários</h1>
+
+<% if @medicalRecord.errors.any? %>
+<div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <ul>
+        <% @medicalRecord.errors.full_message.each do |message|%>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <%= action %>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+     <div class="col-lg-6">
+        <%= form_for([:backoffice, @medicalRecord]) do |f| %>
+        <div class="form-group">
+           <label>Nome</label>
+           <%= f.text_field :observations, class:"form-control", placeholder:"Descrição do prontuário" %>
+        
+       </div>
+       <button type="submit" class="btn btn-default">Salvar</button>
+       <% end %>
+   </div>
+
+   <!-- /.table-responsive -->
+</div>
+<!-- /.panel-body -->
+</div>
+
+      

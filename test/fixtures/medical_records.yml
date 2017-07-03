@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  observations: MyText
+  references: MyString
+  doctor: MyString
+  references: MyString
+  paciente: MyString
+  references: MyString
+  hospital: MyString
+  references: MyString
+  appointment: MyString
+
+two:
+  observations: MyText
+  references: MyString
+  doctor: MyString
+  references: MyString
+  paciente: MyString
+  references: MyString
+  hospital: MyString
+  references: MyString
+  appointment: MyString

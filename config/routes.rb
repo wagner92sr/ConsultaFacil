@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :doctors, except: [:show]
     resources :patients, except: [:show]
     resources :diagrams, only: [:index]
+    resources :medical_records, except: [:show, :destroy]
     get 'dashboard', to: 'dashboard#index' 
     #get 'patients/index' get 'doctors/index'
   end
@@ -33,7 +34,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :admins, :skip =>[:registrations]
-  devise_for :pacientes
+  devise_for :pacientes, controllers: { 
+     sessions: 'pacientes/sessions',
+     registrations: 'pacientes/registrations' 
+   }
 
   root 'site/home#index'
 
