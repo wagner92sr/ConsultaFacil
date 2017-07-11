@@ -27,6 +27,13 @@ development:
   username: vagrant
   password: 
 
+production:
+  <<: *default
+  database: ConsultaFacil
+  username: vagrant
+  password: 
+
+
 
 
   # The specified database role being used to connect to postgres.
