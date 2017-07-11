@@ -1,1 +1,39 @@
-<%= render partial: "site/search/shared/form_hospitals" %>
+<% unless @results.blank? %>
+
+    <% @results.each do |result| %>
+    <!-- Page Content -->
+        <div class="container">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                    </h1>
+                </div>
+            </div>
+            <!-- /.row -->
+
+             <% unless @results.blank? %>
+                <!-- Project One -->
+                <div class="row">
+                    <div class="col-md-5">
+                        <a href="#">
+                            <%= image_tag result.picture.url(:medium), class:"img-thumbnail" %>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-5">
+                        <h3><%= result.name %></h3>
+                        <p><%= result.description %></p>
+                        <a class="btn btn-primary" href="#">Detalhes<span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                    
+                </div>
+                <!-- /.row -->
+            <% end %>
+        </div>
+        <!-- /.container -->
+    <% end %> 
+<% else %>
+    <h1>NENHUM RESULTADO ENCONTRADO</h1>
+<% end %>

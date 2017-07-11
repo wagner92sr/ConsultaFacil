@@ -29,6 +29,7 @@ gem 'paperclip', '~> 5.0.0'
 gem 'jquery-ui-rails'
 #pesquisas
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'pg_search'
 #Twitter
 gem 'twitter'
 #jquery-rails

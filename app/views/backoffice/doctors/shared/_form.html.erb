@@ -37,17 +37,21 @@
 
           <div class="form-group">
              <label>Telefone</label>
-             <%= f.text_field :phone, class:"form-control", placeholder:"3333-3333" %>
+             <%= f.phone_field :phone, class:"form-control", placeholder:"3333-3333" %>
           </div>
-
+          
+          <div class="row">
+          <div class="col-xs-4">
           <div class="form-group">
              <label>Hospital</label>
              <%= f.collection_select :hospital_id, Hospital.all, :id, :name, :selected => @doctor.hospital_id, class:"form-control"  %>
           </div>
+          </div>
+          </div>
 
           <div class="form-group">    
              <label>CRM</label>
-             <%= f.text_field :crm, class:"form-control", placeholder:"4444449994444" %>
+             <%= f.number_field :crm, class:"form-control", placeholder:"4444449994444" %>
           </div>
 
           <div class="form-group"> 

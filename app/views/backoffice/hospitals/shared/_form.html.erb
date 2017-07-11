@@ -22,13 +22,15 @@
         <%= form_for([:backoffice, @hospital]) do |f| %>
         <div class="form-group">
            <label>Nome</label>
-           <%= f.text_field :name, class:"form-control", placeholder:"Nossa Senhora das Graças" %>
+           <%= f.text_field :name, class:"form-control", placeholder:"Nome do hospital" %>
            <label>Endereço</label>
-           <%= f.text_field :address, class:"form-control", placeholder:"Avenida inventada, 123" %>
+           <%= f.text_field :address, class:"form-control", placeholder:"Endereço" %>
            <label>Cidade</label>
-           <%= f.text_field :city, class:"form-control", placeholder:"Porto Alegre" %>
+           <%= f.text_field :city, class:"form-control", placeholder:"Cidade" %>
            <label>Telefone</label>
-           <%= f.text_field :phone, class:"form-control", placeholder:"3333-3333" %>
+           <%= f.telephone_field :phone, class:"form-control", placeholder:"3333-3333" %>
+           <label>Descrição</label>
+           <%= f.text_area :description, class:"form-control", placeholder:"Descrição do hospital" %>
            <label>Foto</label> <br>
            <%= image_tag @hospital.picture.url(:medium), class:"img-thumbnail" %>
            <label></label>

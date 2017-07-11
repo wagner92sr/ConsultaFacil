@@ -5,6 +5,8 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+#Evita erro no deploy heroku
+config.assets.initialize_on_precompile = false
 
 module Consultafacil
   class Application < Rails::Application

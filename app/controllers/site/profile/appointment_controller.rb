@@ -34,6 +34,12 @@ class Site::Profile::AppointmentController < Site::ProfileController
     end
   end
 
+  def backofficeAppointments
+    @appointments = Appointment.all
+  end
+
+
+
   private
   def set_appointment
     @appointment = Appointment.find_or_create_by(paciente_id: current_paciente.id)
