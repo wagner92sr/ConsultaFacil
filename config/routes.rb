@@ -31,6 +31,8 @@ Rails.application.routes.draw do
       resources :my_data, only: [:edit, :update]
     end
       resources :appointment_details, only: [:show]
+      resources :search_doctors, only: [:index, :show]
+      resources :search_hospitals, only: [:index, :show]
   end
 
   devise_for :admins, :skip =>[:registrations]

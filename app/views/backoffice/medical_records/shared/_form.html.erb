@@ -21,8 +21,30 @@
      <div class="col-lg-6">
         <%= form_for([:backoffice, @medicalRecord]) do |f| %>
         <div class="form-group">
-           <label>Nome</label>
-           <%= f.text_field :observations, class:"form-control", placeholder:"Descrição do prontuário" %>
+          <div class="row">
+          <div class="col-xs-4">
+          <div class="form-group">
+              <%= f.label :Paciente %>
+             <%= f.collection_select :profile_member_id, ProfileMember.all, :id, :first_name, :selected => @medicalRecord.profile_member_id, class:"form-control"  %>
+          </div>
+          </div>
+          </div>
+          <div class="row">
+          <div class="col-xs-4">
+          <div class="form-group">
+             <label>Ultimo Médico</label>
+             <%= f.collection_select :doctor_id, Doctor.all, :id, :name, :selected => @medicalRecord.doctor, class:"form-control"  %>
+          </div>
+          </div>
+          </div>
+           <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <%= f.label :Observações %>
+              <%= f.text_area :observations, class: "form-control", rows: 5 %>
+            </div>
+          </div>
+        </div>
         
        </div>
        <button type="submit" class="btn btn-default">Salvar</button>

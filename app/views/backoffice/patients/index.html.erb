@@ -15,7 +15,6 @@
                 <thead>                                            
                     <tr>
                         <th>Id</th>
-                        <th>CPF</th>
                         <th>Nome</th>
                         <th>Endereço</th>
                         <th>Cidade</th>
@@ -26,8 +25,7 @@
                 <tbody>
                     <% @patients.each do |patient| %>
                     <tr>
-                        <td><%= patient.id %></td>                        
-                        <td><%= patient.crm %></td>                                                 
+                        <td><%= patient.id %></td>                                              
                         <td><%= patient.name %></td>                                                
                         <td><%= patient.address %></td>                                                
                         <td><%= patient.city %></td> 

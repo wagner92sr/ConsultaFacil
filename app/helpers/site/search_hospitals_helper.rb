@@ -1,0 +1,2 @@
+module Site::SearchHospitalsHelper
+end

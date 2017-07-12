@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711021247) do
+ActiveRecord::Schema.define(version: 20170712071941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,8 @@ ActiveRecord::Schema.define(version: 20170711021247) do
     t.string "appointment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "profile_member_id"
+    t.index ["profile_member_id"], name: "index_medical_records_on_profile_member_id"
   end
 
   create_table "pacientes", force: :cascade do |t|
@@ -146,5 +148,6 @@ ActiveRecord::Schema.define(version: 20170711021247) do
   end
 
   add_foreign_key "doctors", "hospitals"
+  add_foreign_key "medical_records", "profile_members"
   add_foreign_key "profile_members", "pacientes"
 end
